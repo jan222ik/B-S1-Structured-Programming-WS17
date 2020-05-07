@@ -1,0 +1,37 @@
+SimpleCalc(String str):Real
+Real number1 = 0;
+Real number2 = 0;
+Integer position = 0;
+Character operation;
+	if ((str[0]=='c')AND(str[1]=='a')AND(str[2]=='l')AND(str[3]=='c')AND(str[4]==' ') then
+	Integer i=5	
+		while ((i<str[].length )AND(str[i]!=' ')) do
+			number1 = 10^position*number1+(str[i]-48)
+			position+=1
+			i+=1;
+		end while
+			i+=1;
+		for(i;i<str[].length;i+=1)		
+			if (str[i]!=' ') then
+				operation = str[i]
+				i=i+2
+				position=0
+				while ((i<str[].length )AND(str[i]!=' ')) do
+					number2 = 10^position*number2+(str[i]-48)
+					position+=1
+					i+=1;
+				end while
+				switch(operation)
+					case '+':	number1 = number1 + number2 break
+					case '-':	number1 = number1 - number2 break
+					case 'x':	number1 = number1 * number2 break
+					case '/':	number1 = number1 / number2 break
+					default: //Fehler
+				end switch
+				i-=1
+			end if
+		end for
+	end if
+	number1 = (number1*100)/100
+	return number1
+end SimpleCalc
